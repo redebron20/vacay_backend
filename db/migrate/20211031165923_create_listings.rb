@@ -4,7 +4,7 @@ class CreateListings < ActiveRecord::Migration[6.1]
       t.string :title
       t.string :description
       t.string :location
-      t.string :location description
+      t.string :location_description
       t.float :longitude
       t.float :latitude
       t.boolean :pets_allowed
