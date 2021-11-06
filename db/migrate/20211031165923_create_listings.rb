@@ -16,6 +16,7 @@ class CreateListings < ActiveRecord::Migration[6.1]
       t.boolean :kitchen
       t.boolean :wifi
       t.integer :price
+      t.string :main_image
 
       t.timestamps
     end

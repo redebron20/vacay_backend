@@ -24,20 +24,6 @@ class ListingsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /listings/1
-  def update
-    if @listing.update(listing_params)
-      render json: @listing
-    else
-      render json: @listing.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /listings/1
-  def destroy
-    @listing.destroy
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_listing
@@ -46,6 +32,23 @@ class ListingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:title, :description, :location)
+      params.require(:listing).permit(
+        :title, 
+        :description, 
+        :location, 
+        :location_description, 
+        :longitude,
+        :latitude,
+        :pets_allowed,
+        :air_conditioning,
+        :guests,
+        :bedrooms,
+        :beds,
+        :baths,
+        :kitchen,
+        :wifi,
+        :price,
+        # :main_image
+      )
     end
 end
